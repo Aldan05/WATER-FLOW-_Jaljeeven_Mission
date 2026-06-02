@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5F7FA"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pure Flow"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"
+                android:textColor="#1A237E"/>
+
+            <Button
+                android:id="@+id/buttonLogout"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:text="Logout"
+                android:textColor="#C62828"
+                android:textStyle="bold"
+                app:icon="@android:drawable/ic_lock_power_off"
+                app:iconTint="#C62828"/>
+        </RelativeLayout>
+
+        <!-- Mode Toggle Card -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#E0E0E0">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/textViewModeLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mode: Offline (Manual)"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:textColor="#546E7A"
+                    android:layout_marginBottom="8dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:id="@+id/textViewTdsDisplay"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="TDS: -- ppm"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#212121"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/textViewOfflineHint"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Manual Entry"
+                        android:textSize="18sp"
+                        android:textColor="#757575"/>
+
+                    <com.google.android.material.switchmaterial.SwitchMaterial
+                        android:id="@+id/switchAutoFetch"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Online"
+                        android:textColor="#212121"
+                        android:textStyle="bold"
+                        android:checked="false"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/buttonWifiSetup"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Connect to TDS_ESP32 WiFi"
+                    android:layout_marginTop="8dp"
+                    android:textColor="#00796B"
+                    app:strokeColor="#00796B"
+                    android:visibility="gone"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Input Fields -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enter Levels Below"
+            android:textStyle="bold"
+            android:textColor="#424242"
+            android:layout_marginBottom="8dp"
+            android:textSize="14sp"/>
+
+        <EditText
+            android:id="@+id/editTextChlorine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Chlorine Level (1-12)"
+            android:inputType="numberDecimal"
+            android:autofillHints="none"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/editTextPH"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="pH Level (1-14)"
+            android:inputType="numberDecimal"
+            android:autofillHints="none"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/editTextSilver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Silver Ion Level (1-10)"
+            android:inputType="numberDecimal"
+            android:autofillHints="none"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            android:layout_marginBottom="12dp"/>
+
+        <EditText
+            android:id="@+id/editTextTDS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="TDS Level (ppm)"
+            android:inputType="numberDecimal"
+            android:autofillHints="none"
+            android:padding="16dp"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:textColor="#212121"
+            android:textColorHint="#757575"
+            android:layout_marginBottom="24dp"/>
+
+        <Button
+            android:id="@+id/buttonCheck"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="SAVE RECORD"
+            android:backgroundTint="#2E7D32"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Grid Buttons -->
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="2"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false">
+
+            <Button
+                android:id="@+id/buttonVisualize"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_columnWeight="1"
+                android:text="Charts"
+                android:layout_margin="6dp"
+                android:backgroundTint="#1A237E"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"/>
+
+            <Button
+                android:id="@+id/buttonHistory"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_columnWeight="1"
+                android:text="History"
+                android:layout_margin="6dp"
+                android:backgroundTint="#1A237E"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"/>
+
+            <Button
+                android:id="@+id/buttonHelpSupport"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_columnWeight="1"
+                android:text="Support"
+                android:layout_margin="6dp"
+                android:backgroundTint="#F57C00"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"/>
+
+            <Button
+                android:id="@+id/buttonAIChat"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_columnWeight="1"
+                android:text="AI Chat"
+                android:layout_margin="6dp"
+                android:backgroundTint="#00897B"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"/>
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="primary_navy">#1A237E</color>
+    <color name="primary_green">#2E7D32</color>
+    <color name="background_light">#F5F7FA</color>
+    <color name="text_primary">#212121</color>
+    <color name="text_secondary">#546E7A</color>
+    <color name="accent_orange">#F57C00</color>
+    <color name="error_red">#C62828</color>
+    <color name="light_blue_bg">#E3F2FD</color>
+</resources>
